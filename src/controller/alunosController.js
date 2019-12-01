@@ -37,38 +37,38 @@ getList = (request, response) => {
 }
 
 // ROTA PATCH, UPDTAE POR ID -->
-const update = (request, response)=> {  
-    const id= request.params.id
-    const body = request.body 
-    const options = {new: true}
-    
+const update = (request, response) => {
+    const id = request.params.id
+    const body = request.body
+    const options = { new: true }
+
     alunosModel.findByIdAndUpdate(id, body, options, (error, contato) => {
-      if (error) {
-        return response.status(500).send(error)
-      } else if (contato){
-        return response.status(200).send(contato)
-      }else{
-        return response.sendStatus(404)
-      }
-  
+        if (error) {
+            return response.status(500).send(error)
+        } else if (contato) {
+            return response.status(200).send(contato)
+        } else {
+            return response.sendStatus(404)
+        }
+
     })
-  }
+}
 
 // ROTA DELETAR  POR ID-->
-  const deletar = (request, response) => {
+const deletar = (request, response) => {
     const id = request.params.id
-  
+
     alunosModel.findOneAndDelete(id, (error) => {
-      if (error) {
-        return response.status(500).send(error)
-      } else {
-        return response.status(200).send("Apagou")
-  
-      }
-  
+        if (error) {
+            return response.status(500).send(error)
+        } else {
+            return response.status(200).send("Apagou")
+
+        }
+
     })
-  
-  };
+
+};
 
 module.exports = { add, getList, update, deletar }
 

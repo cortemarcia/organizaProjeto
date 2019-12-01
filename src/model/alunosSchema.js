@@ -14,4 +14,4 @@ const AlunosSchema = new Schema({
 
 const AlunoModel = mongoose.model('Alunos', AlunosSchema);
 
-module.exports = AlunosModel;
+module.exports = AlunoModel;

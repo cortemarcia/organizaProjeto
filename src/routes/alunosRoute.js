@@ -1,9 +1,13 @@
 const express = require('express');
 const router = express.Router();
+const controller = require("../controller/alunosController")
 
-const controller = require("../controllers/AlunosController")
+// ROTAS alunosSchemas
+router.post ('', controller.add )
+router.get ('', controller.getList)
+router.patch ('/:id', controller.update)
+router.delete('/:id',controller.deletar)
 
 
-router.post('', controller.add)
 
-modulo.exports = router
+module.exports = router
