@@ -1,19 +1,13 @@
 const { connect } = require('../model/Repository')
-const alunosModel = require('../model/alunosSchema')
-//const bcrypt = require('bcryptjs')
+const eventosModel = require('../model/eventosSchema')
+
 connect()
 
+const addEvento = (request, response) => {
+   
+    const novoEvento = new eventosModel(request.body)
 
-// ROTA GET-->
-const add = (request, response) => {
-    // if (!request.body.senha) {
-    //   return response.status(400).send('bota a senha aí')
-    // }
-    // const senhaCriptografada = bcrypt.hashSync(request.body.senha)
-    // request.body.senha = senhaCriptografada
-    const novoAluno = new alunosModel(request.body)
-
-    novoAluno.save((error) => {
+    novoEvento.save((error) => {
         if (error) {
             return response.status(500).send(error)
         }
@@ -22,8 +16,8 @@ const add = (request, response) => {
     })
 }
 
-// ROTA POST  CADASTRO NOVO-->
-getList = (request, response) => {
+
+const eventosAll = (request, response) => {
     alunosModel.find((error, alunos) => {
 
         if (error) {
@@ -36,17 +30,16 @@ getList = (request, response) => {
 
 }
 
-// ROTA PATCH, UPDTAE POR ID -->
 const update = (request, response) => {
     const id = request.params.id
     const body = request.body
     const options = { new: true }
 
-    alunosModel.findByIdAndUpdate(id, body, options, (error, contato) => {
+    eventosModel.findByIdAndUpdate(id, body, options, (error, evento) => {
         if (error) {
             return response.status(500).send(error)
-        } else if (contato) {
-            return response.status(200).send(contato)
+        } else if (evento) {
+            return response.status(200).send(evento)
         } else {
             return response.sendStatus(404)
         }
@@ -58,11 +51,11 @@ const update = (request, response) => {
 const deletar = (request, response) => {
     const id = request.params.id
 
-    alunosModel.findOneAndDelete(id, (error) => {
+    eventosModel.findOneAndDelete(id, (error) => {
         if (error) {
             return response.status(500).send(error)
         } else {
-            return response.status(200).send("Apagou")
+            return response.status(200).send("Evento Apagado")
 
         }
 
@@ -70,6 +63,8 @@ const deletar = (request, response) => {
 
 };
 
-module.exports = { add, getList, update, deletar }
 
-
+module.exports = { addEvento,
+eventosAll, 
+update,
+deletar}
