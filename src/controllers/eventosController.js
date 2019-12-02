@@ -12,19 +12,19 @@ const addEvento = (request, response) => {
             return response.status(500).send(error)
         }
 
-        return response.status(201).send(novoAluno)
+        return response.status(201).send(novoEvento)
     })
 }
 
 
 const eventosAll = (request, response) => {
-    alunosModel.find((error, alunos) => {
+    eventosModel.find((error, eventos) => {
 
         if (error) {
 
             return response.status(500).send(error)
         } else {
-            return response.status(200).send(alunos)
+            return response.status(200).send(eventos)
         }
     })
 

@@ -3,10 +3,10 @@ const router = express.Router();
 const controller1 = require("../controllers/eventosController")
 
 
-router.post ('', controller.addEvento)
-router.get ('', controller.eventosAll)
-router.patch ('/:id', controller.update)
-router.delete('/:id',controller.deletar)
+router.post ('',controller1.addEvento)
+router.get ('', controller1.eventosAll)
+router.patch ('/:id', controller1.update)
+router.delete('/:id',controller1.deletar)
 
 
 

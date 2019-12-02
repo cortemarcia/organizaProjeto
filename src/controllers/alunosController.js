@@ -6,11 +6,7 @@ connect()
 
 // ROTA POST-->
 const add = (request, response) => {
-    // if (!request.body.senha) {
-    //   return response.status(400).send('bota a senha aí')
-    // }
-    // const senhaCriptografada = bcrypt.hashSync(request.body.senha)
-    // request.body.senha = senhaCriptografada
+
     const novoAluno = new alunosModel(request.body)
 
     novoAluno.save((error) => {
@@ -70,9 +66,11 @@ const deletar = (request, response) => {
 
 };
 
-module.exports = { add, 
-    alunosAll, 
-    update, 
-    deletar }
+module.exports = {
+    add,
+    alunosAll,
+    update,
+    deletar
+}
 
 
