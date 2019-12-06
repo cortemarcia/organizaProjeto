@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const MONGO_URL = 'mongodb://localhost:27017/cadastro';
+const MONGO_URL = 'mongodb://localhost:27017/eventos';
 
 function connect () {
   mongoose.connect(MONGO_URL,

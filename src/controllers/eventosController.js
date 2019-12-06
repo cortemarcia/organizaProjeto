@@ -1,11 +1,11 @@
 const { connect } = require('../model/Repository')
-const eventosModel = require('../model/eventosSchema')
+const {EventosModel} = require('../model/schemas')
 
 connect()
 
 const addEvento = (request, response) => {
    
-    const novoEvento = new eventosModel(request.body)
+    const novoEvento = new EventosModel(request.body)
 
     novoEvento.save((error) => {
         if (error) {
@@ -18,7 +18,7 @@ const addEvento = (request, response) => {
 
 
 const eventosAll = (request, response) => {
-    eventosModel.find((error, eventos) => {
+    EventosModel.find((error, eventos) => {
 
         if (error) {
 
@@ -35,7 +35,7 @@ const update = (request, response) => {
     const body = request.body
     const options = { new: true }
 
-    eventosModel.findByIdAndUpdate(id, body, options, (error, evento) => {
+    EventosModel.findByIdAndUpdate(id, body, options, (error, evento) => {
         if (error) {
             return response.status(500).send(error)
         } else if (evento) {
@@ -51,7 +51,7 @@ const update = (request, response) => {
 const deletar = (request, response) => {
     const id = request.params.id
 
-    eventosModel.findOneAndDelete(id, (error) => {
+    EventosModel.findOneAndDelete(id, (error) => {
         if (error) {
             return response.status(500).send(error)
         } else {

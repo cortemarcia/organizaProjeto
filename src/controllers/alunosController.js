@@ -1,5 +1,5 @@
 const { connect } = require('../model/Repository')
-const alunosModel = require('../model/alunosSchema')
+const {AlunosModel} = require('../model/schemas')
 //const bcrypt = require('bcryptjs')
 connect()
 
@@ -7,7 +7,7 @@ connect()
 // ROTA POST-->
 const add = (request, response) => {
 
-    const novoAluno = new alunosModel(request.body)
+    const novoAluno = new AlunosModel(request.body)
 
     novoAluno.save((error) => {
         if (error) {
@@ -20,7 +20,7 @@ const add = (request, response) => {
 
 // ROTA GET  CADASTRO NOVO-->
 const alunosAll = (request, response) => {
-    alunosModel.find((error, alunos) => {
+    AlunosModel.find((error, alunos) => {
 
         if (error) {
 
@@ -38,7 +38,7 @@ const update = (request, response) => {
     const body = request.body
     const options = { new: true }
 
-    alunosModel.findByIdAndUpdate(id, body, options, (error, contato) => {
+    AlunosModel.findByIdAndUpdate(id, body, options, (error, contato) => {
         if (error) {
             return response.status(500).send(error)
         } else if (contato) {
@@ -54,7 +54,7 @@ const update = (request, response) => {
 const deletar = (request, response) => {
     const id = request.params.id
 
-    alunosModel.findOneAndDelete(id, (error) => {
+    AlunosModel.findOneAndDelete(id, (error) => {
         if (error) {
             return response.status(500).send(error)
         } else {
