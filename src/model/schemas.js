@@ -7,7 +7,7 @@ const AlunosSchema = new Schema({
     email: { type: String, required: true },
     senha: { type: String, required: true },
     confirmacaoPresenca: { type: Boolean, required:true },
-    CPF: { type: String, required: true },
+    CPF: { type: String, required: true }
 })
 
 const EventosSchema = new Schema({
@@ -16,15 +16,16 @@ const EventosSchema = new Schema({
     data: { type: String, required: true },
     endereco: { type: String, required: true },
     confirmados: { type: String },
-    nao_confirmados: { type: String, required: false },
+    nao_confirmados: { type: String, required: false }
+
 })
 
 AlunosSchema.add({
-    eventos: [EventosSchema]
+    eventos:[EventosSchema]
 })
 
 EventosSchema.add({
-    alunos: [AlunosSchema]
+    alunos:  [AlunosSchema]
 })
 
 const EventosModel = mongoose.model('Eventos', EventosSchema);

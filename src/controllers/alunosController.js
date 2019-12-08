@@ -1,7 +1,28 @@
 const { connect } = require('../model/Repository')
-const {AlunosModel} = require('../model/schemas')
+const { AlunosModel } = require('../model/schemas')
+const { EventosModel } = require('../model/schemas')
 //const bcrypt = require('bcryptjs')
 connect()
+
+
+
+const addEvento = async (request, response) => {
+    const alunoId = request.params.alunoId
+    const evento = request.body
+    const novoEvento = new EventosModel(evento)
+    const aluno = await AlunosModel.findById(alunoId)
+
+
+    aluno.eventos.push(novoEvento)
+    aluno.save((error) => {
+        if (error) {
+            return response.status(500).send(error)
+        }
+
+        return response.status(201).send(aluno)
+    })
+}
+
 
 
 // ROTA POST-->
@@ -70,7 +91,8 @@ module.exports = {
     add,
     alunosAll,
     update,
-    deletar
+    deletar,
+    addEvento
 }
 
 

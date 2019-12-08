@@ -1,10 +1,32 @@
 const { connect } = require('../model/Repository')
-const {EventosModel} = require('../model/schemas')
+const { EventosModel } = require('../model/schemas')
+const { AlunosModel }= require('../model/schemas')
 
 connect()
 
-const addEvento = (request, response) => {
-   
+const addAluno = async (request, response) => {
+    const eventoId = request.params.eventoId
+    const aluno = request.body
+    const novoAluno = new AlunosModel(aluno)
+    const evento =  await EventosModel.findById(eventoId)
+     
+    
+    evento.alunos.push(novoAluno)    
+    evento.save((error) => {
+        if (error) {
+            return response.status(500).send(error)
+        }
+
+        return response.status(201).send(evento)
+    })
+}
+
+
+
+
+
+const postEvento = (request, response) => {
+
     const novoEvento = new EventosModel(request.body)
 
     novoEvento.save((error) => {
@@ -64,7 +86,10 @@ const deletar = (request, response) => {
 };
 
 
-module.exports = { addEvento,
-eventosAll, 
-update,
-deletar}
+module.exports = {
+    postEvento,
+    eventosAll,
+    update,
+    deletar,
+    addAluno
+}

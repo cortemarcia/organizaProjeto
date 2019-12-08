@@ -7,6 +7,7 @@ router.post ('', controller.add )
 router.get ('', controller.alunosAll)
 router.patch ('/:id', controller.update)
 router.delete('/:id',controller.deletar)
+router.post('/:alunoId/eventos', controller.addEvento)
 
 
 

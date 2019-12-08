@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const MONGO_URL = 'mongodb://localhost:27017/eventos';
+const MONGO_URL = 'mongodb://localhost:27017/eventos'; //nome do projeto, mudar
 
 function connect () {
   mongoose.connect(MONGO_URL,
