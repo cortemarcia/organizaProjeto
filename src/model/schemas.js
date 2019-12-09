@@ -6,7 +6,6 @@ const AlunosSchema = new Schema({
     nome: { type: String, required: true },
     email: { type: String, required: true },
     senha: { type: String, required: true },
-    confirmacaoPresenca: { type: Boolean, required:true },
     CPF: { type: String, required: true }
 })
 
@@ -14,10 +13,8 @@ const EventosSchema = new Schema({
     _id: { type: mongoose.Schema.Types.ObjectId, auto: true, required: true },
     nome: { type: String, required: true },
     data: { type: String, required: true },
-    endereco: { type: String, required: true },
-    confirmados: { type: String },
-    nao_confirmados: { type: String, required: false }
-
+    endereco: { type: String, required: true }
+    
 })
 
 AlunosSchema.add({

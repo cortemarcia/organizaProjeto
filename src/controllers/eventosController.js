@@ -21,10 +21,6 @@ const addAluno = async (request, response) => {
     })
 }
 
-
-
-
-
 const postEvento = (request, response) => {
 
     const novoEvento = new EventosModel(request.body)
