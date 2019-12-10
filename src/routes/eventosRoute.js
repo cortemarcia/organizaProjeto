@@ -9,6 +9,10 @@ router.patch ('/:id', controller1.update)
 router.delete('/:id',controller1.deletar)
 router.post('/:eventoId/alunos', controller1.addAluno)
 
+// PROPOSTA
+
+// router.delete('/:eventoid/:alunoId/deletar')
+
 
 
 
