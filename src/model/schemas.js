@@ -28,8 +28,13 @@ const AulaSchema = new Schema({
 })
 
 
-
-
+const AdminSchema = new Schema({
+    _id: { type: mongoose.Schema.Types.ObjectId, auto: true, required: true },
+    nome: { type: String, required: true },
+    CPF: { type: String, required: true },
+    email: { type: String, required: true },
+    senha: {type: String, required: true}
+})
 
 EventosSchema.add({
     alunos:  [AlunosSchema]
@@ -38,5 +43,6 @@ EventosSchema.add({
 const EventosModel = mongoose.model('Eventos', EventosSchema);
 const AlunosModel = mongoose.model('Alunos', AlunosSchema);
 const AulasModel = mongoose.model('Aulas', AulaSchema);
+const AdminModel = mongoose.model('/Admin', AdminSchema )
 
-module.exports = { EventosModel, AlunosModel, AulasModel }
+module.exports = { EventosModel, AlunosModel, AulasModel, AdminSchema }
