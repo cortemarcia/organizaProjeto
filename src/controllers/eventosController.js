@@ -100,29 +100,29 @@ const deletarAluno = async (request, response) => {
 
 };
 
-// const login = async (request, response) => {
-//     const treinadorEncontrado = await treinadoresModel.findOne({ email: request.body.email })
+const login = async (request, response) => {
+    const treinadorEncontrado = await treinadoresModel.findOne({ email: request.body.email })
   
-//     if (treinadorEncontrado) {
-//       const senhaCorreta = bcrypt.compareSync(request.body.senha, treinadorEncontrado.senha)
+    if (treinadorEncontrado) {
+      const senhaCorreta = bcrypt.compareSync(request.body.senha, treinadorEncontrado.senha)
   
-//       if (senhaCorreta) {
-//         const token = jwt.sign(
-//           {
-//             grupo: treinadorEncontrado.grupo
-//           },
-//           SEGREDO,
-//           { expiresIn: 6000 }
-//         )
+      if (senhaCorreta) {
+        const token = jwt.sign(
+          {
+            grupo: treinadorEncontrado.grupo
+          },
+          SEGREDO,
+          { expiresIn: 6000 }
+        )
   
-//         return response.status(200).send({ token })
-//       }
+        return response.status(200).send({ token })
+      }
   
-//       return response.status(401).send('Senha incorreta.')
-//     }
+      return response.status(401).send('Senha incorreta.')
+    }
   
-//     return response.status(404).send('Treinador não encontrado.')
-//   }
+    return response.status(404).send('Treinador não encontrado.')
+  }
 
 
 module.exports = {
@@ -131,6 +131,6 @@ module.exports = {
     update,
     deletarEvento,
     addAluno,
-    deletarAluno
-    // login
+    deletarAluno,
+    login
 }
