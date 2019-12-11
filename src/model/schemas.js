@@ -33,7 +33,8 @@ const AdminSchema = new Schema({
     nome: { type: String, required: true },
     CPF: { type: String, required: true },
     email: { type: String, required: true },
-    senha: {type: String, required: true}
+    senha: {type: String, required: true},
+    grupo: { type: String }
 })
 
 EventosSchema.add({
@@ -43,6 +44,6 @@ EventosSchema.add({
 const EventosModel = mongoose.model('Eventos', EventosSchema);
 const AlunosModel = mongoose.model('Alunos', AlunosSchema);
 const AulasModel = mongoose.model('Aulas', AulaSchema);
-const AdminModel = mongoose.model('/Admin', AdminSchema )
+const AdminModel = mongoose.model('Admin', AdminSchema )
 
-module.exports = { EventosModel, AlunosModel, AulasModel, AdminSchema }
+module.exports = { EventosModel, AlunosModel, AulasModel, AdminModel }

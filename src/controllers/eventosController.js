@@ -109,6 +109,5 @@ module.exports = {
     update,
     deletarEvento,
     addAluno,
-    deletarAluno,
-    login
+    deletarAluno
 }
