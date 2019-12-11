@@ -21,7 +21,7 @@ const addAluno = async (request, response) => {
     })
 }
 
-const postEvento = (request, response) => {
+const addEvento = (request, response) => {
 
     const novoEvento = new EventosModel(request.body)
 
@@ -66,7 +66,7 @@ const update = (request, response) => {
 }
 
 // ROTA DELETAR  POR ID-->
-const deletar = (request, response) => {
+const deletarEvento = (request, response) => {
     const id = request.params.id
 
     EventosModel.findOneAndDelete(id, (error) => {
@@ -81,11 +81,56 @@ const deletar = (request, response) => {
 
 };
 
+const deletarAluno = async (request, response) => {
+    const eventosId = request.params.eventoId
+    const alunosId =  request.params.alunoId
+
+    const foundEvent = await EventosModel.findById(eventosId)
+    const aluno = foundEvent.alunos.find(item => item._id == alunosId)
+
+    foundEvent.alunos.remove(aluno);
+    foundEvent.save((error) => {
+        if (error) {
+            return response.status(500).send(error)
+        } else {
+            return response.status(200).send("Aluno Apagado")
+
+        }
+    })
+
+};
+
+// const login = async (request, response) => {
+//     const treinadorEncontrado = await treinadoresModel.findOne({ email: request.body.email })
+  
+//     if (treinadorEncontrado) {
+//       const senhaCorreta = bcrypt.compareSync(request.body.senha, treinadorEncontrado.senha)
+  
+//       if (senhaCorreta) {
+//         const token = jwt.sign(
+//           {
+//             grupo: treinadorEncontrado.grupo
+//           },
+//           SEGREDO,
+//           { expiresIn: 6000 }
+//         )
+  
+//         return response.status(200).send({ token })
+//       }
+  
+//       return response.status(401).send('Senha incorreta.')
+//     }
+  
+//     return response.status(404).send('Treinador não encontrado.')
+//   }
+
 
 module.exports = {
-    postEvento,
+    addEvento,
     eventosAll,
     update,
-    deletar,
-    addAluno
+    deletarEvento,
+    addAluno,
+    deletarAluno
+    // login
 }

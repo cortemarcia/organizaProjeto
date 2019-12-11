@@ -5,21 +5,23 @@ const AlunosSchema = new Schema({
     _id: { type: mongoose.Schema.Types.ObjectId, auto: true, required: true },
     nome: { type: String, required: true },
     email: { type: String, required: true },
-    CPF: { type: String, required: true }
+    CPF: { type: String, required: true },
+    Telefone: {type: String, required: true}
 })
 
 const EventosSchema = new Schema({
     _id: { type: mongoose.Schema.Types.ObjectId, auto: true, required: true },
     nome: { type: String, required: true },
     data: { type: String, required: true },
+    horario: {type: String, required: true},
     endereco: { type: String, required: true }
     
 })
 
 const AulaSchema = new Schema({
     _id: { type: mongoose.Schema.Types.ObjectId, auto: true, required: true },
-    materia: { type: String, required: true },
     semana: { type: String, required: true },
+    materia: { type: String, required: true },  
     data: { type: String, required: true },
     professora: {type: String, required: true}
     
@@ -27,9 +29,7 @@ const AulaSchema = new Schema({
 
 
 
-AlunosSchema.add({
-    eventos:[EventosSchema]
-})
+
 
 EventosSchema.add({
     alunos:  [AlunosSchema]
