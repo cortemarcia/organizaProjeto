@@ -43,10 +43,10 @@ const addAdmin = (request, response) => {
       }
   
       if (admin) {
-        return response.status(200).send(id)
+        return response.status(200).send('Adminstradora apagada !')
       }
   
-      return response.status(404).send('Administrador não encontrado.')
+      return response.status(404).send('Administradora não encontrado.')
     })
 }
 
@@ -80,8 +80,7 @@ const addAdmin = (request, response) => {
               {
                 grupo: adminEncontrado.grupo
               },
-              SEGREDO,
-              { expiresIn: 6000 }
+              SEGREDO
             )
       
             return response.status(200).send({ token })
