@@ -3,15 +3,15 @@ const Schema = mongoose.Schema;
 
 const AlunosSchema = new Schema({
     _id: { type: mongoose.Schema.Types.ObjectId, auto: true, required: true },
-    nome: { type: String, required: true },
+    nome: { type: String, required: true, unique:true },
     email: { type: String, required: true },
-    CPF: { type: String, required: true },
+    CPF: { type: String, required: true, unique:true },
     Telefone: {type: String, required: true}
 })
 
 const EventosSchema = new Schema({
     _id: { type: mongoose.Schema.Types.ObjectId, auto: true, required: true },
-    nome: { type: String, required: true },
+    nome: { type: String, required: true, unique: true },
     data: { type: String, required: true },
     horario: {type: String, required: true},
     endereco: { type: String, required: true }
@@ -23,7 +23,8 @@ const AulaSchema = new Schema({
     semana: { type: String, required: true },
     materia: { type: String, required: true },  
     data: { type: String, required: true },
-    professora: {type: String, required: true}
+    professora: {type: String, required: true},
+    Descritivo: {type:String, required: true}
     
 })
 
