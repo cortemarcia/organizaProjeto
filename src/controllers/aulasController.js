@@ -31,6 +31,20 @@ const aulasAll = (request, response) => {
 
 }
 
+// const aulasAllWeek = (request, response) => {
+//     const semanaId = request.params.semanaId
+//     AulasModel.find(semanaId,(error, semana) => {
+
+//         if (error) {
+
+//             return response.status(500).send(error)
+//         } else {
+//             return response.status(200).send(semana)
+//         }
+//     })
+
+// }
+
 // ROTA PATCH, UPDTAE POR ID -->
 const update = (request, response) => {
     const id = request.params.id
@@ -69,6 +83,7 @@ module.exports = {
     addAulas,
     aulasAll,
     update,
-    deletar
+    deletar, 
+    aulasAllWeek
     
 }

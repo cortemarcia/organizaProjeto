@@ -39,6 +39,7 @@ router.post ('', autenticarAdmin,controller.addAulas )
 router.get ('', controller.aulasAll)
 router.patch ('/:id', autenticarAdmin, controller.update)
 router.delete('/:id',autenticarAdmin, controller.deletar)
+// router.get ('/:semanaId', controller.aulasAllWeek)
 
 
 
