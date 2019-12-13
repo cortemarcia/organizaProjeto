@@ -10,7 +10,7 @@ Através dela  o Administrador tem acesso de adicionar, alterar, excluir eventos
 ## Veja as rotas:
 
 ###Eventos:
-- [x] #### VER TODOS OS EVENTOS- get ('', controller1.eventosAll)
+- [x] ####VER TODOS OS EVENTOS- get ('', controller1.eventosAll)
 - [x] #### ADICIONAR EVENTOS- post ('',autenticarAdmin, controller1.addEvento)
 - [x] #### ATUALIZAR EVENTO- patch ('/:id',autenticarAdmin, controller1.update)
 - [x] ##### DELETAR EVENTO- delete('/:id',autenticarAdmin,controller1.deletarEvento)
