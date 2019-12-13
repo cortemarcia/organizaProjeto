@@ -36,3 +36,4 @@ Através dela  o Administrador tem acesso de adicionar, alterar, excluir eventos
 - [ ] Vincular os eventos as devidas semanas de aulas;
 - [ ] Criar rota de presença dos alunos as aulas;
 - [ ] Fazer GET de cada semana de aula. 
+- [ ] Possibilitar acesso dos palestrantes de eventos que poderão adicionar recados, que assim  irá criar mensagens push nos contatos dos inscritos do evento.
