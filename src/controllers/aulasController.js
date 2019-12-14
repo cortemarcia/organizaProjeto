@@ -83,7 +83,7 @@ module.exports = {
     addAulas,
     aulasAll,
     update,
-    deletar, 
-    aulasAllWeek
+    deletar
+    // aulasAllWeek
     
 }
