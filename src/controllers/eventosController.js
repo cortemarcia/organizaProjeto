@@ -21,7 +21,7 @@ const addAluno = async (request, response) => {
     })
 }
 
-const addEvento = (request, response) => {
+const addEvent = (request, response) => {
 
     const novoEvento = new EventosModel(request.body)
 
@@ -35,7 +35,7 @@ const addEvento = (request, response) => {
 }
 
 
-const eventosAll = (request, response) => {
+const eventsAll = (request, response) => {
     EventosModel.find((error, eventos) => {
 
         if (error) {
@@ -66,7 +66,7 @@ const update = (request, response) => {
 }
 
 // ROTA DELETAR  POR ID-->
-const deletarEvento = (request, response) => {
+const deleteEvent = (request, response) => {
     const id = request.params.id
 
     EventosModel.findOneAndDelete(id, (error) => {
@@ -81,7 +81,7 @@ const deletarEvento = (request, response) => {
 
 };
 
-const deletarAluno = async (request, response) => {
+const deleteAluno = async (request, response) => {
     const eventosId = request.params.eventoId
     const alunosId =  request.params.alunoId
 
@@ -104,10 +104,10 @@ const deletarAluno = async (request, response) => {
 
 
 module.exports = {
-    addEvento,
-    eventosAll,
+    addEvent,
+    eventsAll,
     update,
-    deletarEvento,
+    deleteEvent,
     addAluno,
-    deletarAluno
+    deleteAluno
 }

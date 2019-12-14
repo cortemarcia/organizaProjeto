@@ -37,12 +37,12 @@ const SEGREDO = 'MIICXAIBAAKBgQCOl54HaBM/WiL/jPPdFGjm9f8VprUst1J+vs7G/YRGRHYLGqt
   
     next()
   }
-router.get ('', controller1.eventosAll)
-router.post ('',autenticarAdmin, controller1.addEvento)
+router.get ('', controller1.eventsAll)
+router.post ('',autenticarAdmin, controller1.addEvent)
 router.patch ('/:id',autenticarAdmin, controller1.update)
-router.delete('/:id',autenticarAdmin,controller1.deletarEvento)
+router.delete('/:id',autenticarAdmin,controller1.deleteEvent)
 router.post('/:eventoId/alunos', autenticarAdmin,controller1.addAluno)
-router.delete('/:eventoId/:alunoId',autenticarAdmin, controller1.deletarAluno)
+router.delete('/:eventoId/:alunoId',autenticarAdmin, controller1.deleteAluno)
 
 
 
