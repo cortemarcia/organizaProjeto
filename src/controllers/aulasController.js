@@ -4,7 +4,7 @@ connect()
 
 
 // ROTA POST-->
-const addAulas = (request, response) => {
+const addAula = (request, response) => {
 
     const novaAula = new AulasModel(request.body)
 
@@ -17,19 +17,8 @@ const addAulas = (request, response) => {
     })
 }
 
-// const getTurma = (request, response) => {
-//     const turma = request.params.turma
-//     AulasModel.filter(AulasModel => AulasModel.turma == turma, ((error) => {
-//     if (error) {
-//         return response.status(500).send(error)
-//     } else {
-//         return response.status(200).send(aulas)
-//     }
-// })
 
-// }
-
-const getTurma = (request, response) => {
+const oneClass = (request, response) => {
     const turma = request.params.turma
     AulasModel.find(AulasModel => AulasModel.turma === turma, ((error, turma) => {
         if (error) {
@@ -76,7 +65,7 @@ const update = (request, response) => {
 }
 
 // ROTA DELETAR  POR ID-->
-const deletar = (request, response) => {
+const remove = (request, response) => {
     const id = request.params.id
 
     AulasModel.findOneAndDelete(id, (error) => {
@@ -92,9 +81,9 @@ const deletar = (request, response) => {
 };
 
 module.exports = {
-    addAulas,
+    addAula,
     classAll,
     update,
-    deletar,
-    getTurma
+    remove,
+    oneClass
 }
