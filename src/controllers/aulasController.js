@@ -3,7 +3,6 @@ const { AulasModel } = require('../model/schemas')
 connect()
 
 
-
 const addAula = (request, response) => {
 
     const novaAula = new AulasModel(request.body)
@@ -18,17 +17,17 @@ const addAula = (request, response) => {
 }
 
 
-// const oneClass = (request, response) => {
-//     const turma = request.params.turma
-//     AulasModel.find(AulasModel => AulasModel.turma === turma, ((error, turma) => {
-//         if (error) {
-//             return response.status(500).send(error)
-//         } else {
-//             return response.status(200).send(turma)
-//         }
-//     })
-// }
+const findByTurmaName = (request, response) => {
+    const turma = request.query.turma
+    AulasModel.findOne({ turma } == turma, (error, turmas) => {
+        if (error) {
+            return response.status(500).send(error)
+        } else {
+            return response.status(200).send(turmas)
+        }
+    })
 
+}
 
 
 const classAll = (request, response) => {
@@ -84,6 +83,6 @@ module.exports = {
     addAula,
     classAll,
     update,
-    remove
-    // oneClass
+    remove,
+    findByTurmaName
 }

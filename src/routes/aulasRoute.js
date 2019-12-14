@@ -39,7 +39,7 @@ router.post ('',controller.addAula )
 router.get ('', controller.classAll)
 router.patch ('/:id', autenticarAdmin, controller.update)
 router.delete('/:id',autenticarAdmin, controller.remove)
-// router.get("/:turma/turmas", controller.oneClass)
+router.get('/:turma?', controller.findByTurmaName)
 
 
 
