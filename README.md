@@ -19,7 +19,7 @@ Através dela  o Administrador tem acesso de adicionar, alterar, excluir eventos
 
 
 ### Aulas:
-- [x] ADICONAR AULA
+- [x] ADICIONAR AULA
 - [x] VER TODAS AS AULAS
 - [x] ATUALIZAR AULA
 - [x] DELETAR AULA
