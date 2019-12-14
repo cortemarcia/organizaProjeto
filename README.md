@@ -10,26 +10,26 @@ Através dela  o Administrador tem acesso de adicionar, alterar, excluir eventos
 ## Veja as rotas:
 
 ### Eventos:
-- [x] VER TODOS OS EVENTOS- get ('', controller1.eventosAll)
-- [x] ADICIONAR EVENTOS- post ('',autenticarAdmin, controller1.addEvento)
-- [x] ATUALIZAR EVENTO- patch ('/:id',autenticarAdmin, controller1.update)
-- [x] DELETAR EVENTO- delete('/:id',autenticarAdmin,controller1.deletarEvento)
-- [x] ADICIONAR CONVIDADOS- post('/:eventoId/alunos', autenticarAdmin,controller1.addAluno)
-- [x] DELETAR CONVIDADOS-delete('/:eventoId/:alunoId',autenticarAdmin, controller1.deletarAluno)
+- [x] VER TODOS OS EVENTOS
+- [x] ADICIONAR EVENTOS
+- [x] ATUALIZAR EVENTO
+- [x] DELETAR EVENTO
+- [x] ADICIONAR CONVIDADOS
+- [x] DELETAR CONVIDADOS
 
 
 ### Aulas:
-- [x] ADICONAR AULA- post ('', autenticarAdmin,controller.addAulas )
-- [x] VER TODAS AS AULAS- get ('', controller.aulasAll)
-- [x] ATUALIZAR AULA- patch ('/:id', autenticarAdmin, controller.update)
-- [x] DELETAR AULA- delete('/:id',autenticarAdmin, controller.deletar)
+- [x] ADICONAR AULA
+- [x] VER TODAS AS AULAS
+- [x] ATUALIZAR AULA
+- [x] DELETAR AULA
 
 ### Administrador:
-- [x] VER TODOS OS ADMIN- get('',autenticarAdmin,controller.adminAll)
-- [x] ADICIONAR NOVO ADMIN- post('', controller.addAdmin)
-- [x] DELETAR ADMIN -delete('/:id', autenticarAdmin, controller.remove)
-- [x] ALTERAR ADMIN- patch ('/:id', autenticarAdmin, controller.update)
-- [x] FAZER LOGIN - post('/login', controller.login)
+- [x] VER TODOS OS ADMIN
+- [x] ADICIONAR NOVO ADMIN
+- [x] DELETAR ADMIN 
+- [x] ALTERAR ADMIN
+- [x] FAZER LOGIN
 
 ### Futuras melhorias:
  
