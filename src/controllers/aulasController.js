@@ -84,6 +84,6 @@ module.exports = {
     aulasAll,
     update,
     deletar
-    // aulasAllWeek
+
     
 }
