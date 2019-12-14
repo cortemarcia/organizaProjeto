@@ -35,8 +35,8 @@ const AdminSchema = new Schema({
     _id: { type: mongoose.Schema.Types.ObjectId, auto: true, required: true },
     nome: { type: String, required: true },
     CPF: { type: String, required: true },
-    email: { type: String, required: true },
-    senha: {type: String, required: true},
+    email: { type: String, required: true, unique: true },
+    senha: {type: String, required: true, unique: true},
     grupo: { type: String }
 })
 
