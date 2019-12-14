@@ -3,11 +3,11 @@
 ## Saiba mais:
 ### Como Surgiu?
 
-A Orga.Re surgiu diante da necessidade de unificar informações necessárias para uma boa comunicação de um projeto, grupo e afins.
+A Orga.Re surgiu diante da necessidade de unificar informações necessárias para uma boa comunicação em um  grupo, turma. Trazendo transparência e organização na comunicação.
 
 Através dela  o Administrador tem acesso de adicionar, alterar, excluir eventos, aulas e participantes confirmados  que vão de acordo como cronograma do projeto e disponibilizar as informações necessárias para o grupo, fazendo com que todos fiquem alinhados.
 
-## Veja as rotas:
+## Funcionalidades:
 
 ### Eventos:
 - [x] VER TODOS OS EVENTOS
