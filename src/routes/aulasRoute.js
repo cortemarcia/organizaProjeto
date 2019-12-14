@@ -35,10 +35,13 @@ const SEGREDO = 'MIICXAIBAAKBgQCOl54HaBM/WiL/jPPdFGjm9f8VprUst1J+vs7G/YRGRHYLGqt
   }
 
 // ROTAS aulasSchemas
-router.post ('', autenticarAdmin,controller.addAulas )
-router.get ('', controller.aulasAll)
+router.post ('',controller.addAulas )
+router.get ('', controller.classAll)
 router.patch ('/:id', autenticarAdmin, controller.update)
 router.delete('/:id',autenticarAdmin, controller.deletar)
+router.get("/:turma/turmas", controller.getTurma)
+
+
 // router.get ('/:semanaId', controller.aulasAllWeek)
 
 

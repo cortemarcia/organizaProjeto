@@ -17,8 +17,32 @@ const addAulas = (request, response) => {
     })
 }
 
+// const getTurma = (request, response) => {
+//     const turma = request.params.turma
+//     AulasModel.filter(AulasModel => AulasModel.turma == turma, ((error) => {
+//     if (error) {
+//         return response.status(500).send(error)
+//     } else {
+//         return response.status(200).send(aulas)
+//     }
+// })
+
+// }
+
+const getTurma = (request, response) => {
+    const turma = request.params.turma
+    AulasModel.find(AulasModel => AulasModel.turma === turma, ((error, turma) => {
+        if (error) {
+            return response.status(500).send(error)
+        } else {
+            return response.status(200).send(turma)
+        }
+    })
+}
+
+
 // ROTA GET  CADASTRO NOVO-->
-const aulasAll = (request, response) => {
+const classAll = (request, response) => {
     AulasModel.find((error, aulas) => {
 
         if (error) {
@@ -31,19 +55,7 @@ const aulasAll = (request, response) => {
 
 }
 
-// const aulasAllWeek = (request, response) => {
-//     const semanaId = request.params.semanaId
-//     AulasModel.find(semanaId,(error, semana) => {
 
-//         if (error) {
-
-//             return response.status(500).send(error)
-//         } else {
-//             return response.status(200).send(semana)
-//         }
-//     })
-
-// }
 
 // ROTA PATCH, UPDTAE POR ID -->
 const update = (request, response) => {
@@ -81,9 +93,8 @@ const deletar = (request, response) => {
 
 module.exports = {
     addAulas,
-    aulasAll,
+    classAll,
     update,
-    deletar
-
-    
+    deletar,
+    getTurma
 }

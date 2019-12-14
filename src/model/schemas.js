@@ -11,6 +11,7 @@ const AlunosSchema = new Schema({
 
 const EventosSchema = new Schema({
     _id: { type: mongoose.Schema.Types.ObjectId, auto: true, required: true },
+    turma:{type: String, required: true},
     nome: { type: String, required: true, unique: true },
     data: { type: String, required: true },
     horario: {type: String, required: true},
@@ -20,6 +21,7 @@ const EventosSchema = new Schema({
 
 const AulaSchema = new Schema({
     _id: { type: mongoose.Schema.Types.ObjectId, auto: true, required: true },
+    turma:{type: String, required: true},
     semana: { type: String, required: true },
     materia: { type: String, required: true },  
     data: { type: String, required: true },
