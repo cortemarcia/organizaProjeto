@@ -32,7 +32,6 @@ const classAll = (request, response) => {
 
 const findByTurmaName = (request, response) => {
     const turma = request.query.nomeTurma
-    console.log(turma)
     AulasModel.find({ turma }, (error, turmas) => {
         if (error) {
             return response.status(500).send(error)

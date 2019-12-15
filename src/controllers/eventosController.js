@@ -85,7 +85,6 @@ const eventsAll = (request, response) => {
 
 const findByTurmaName = (request, response) => {
     const turma = request.query.nomeTurma
-    console.log(turma)
     EventosModel.find({ turma }, (error, turmas) => {
         if (error) {
             return response.status(500).send(error)
