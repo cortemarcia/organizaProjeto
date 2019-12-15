@@ -17,19 +17,6 @@ const addAula = (request, response) => {
 }
 
 
-const findByTurmaName = (request, response) => {
-    const turma = request.query.turma
-    AulasModel.findOne({ turma } == turma, (error, turmas) => {
-        if (error) {
-            return response.status(500).send(error)
-        } else {
-            return response.status(200).send(turmas)
-        }
-    })
-
-}
-
-
 const classAll = (request, response) => {
     AulasModel.find((error, aulas) => {
 
@@ -43,8 +30,32 @@ const classAll = (request, response) => {
 
 }
 
+const findByTurmaName = (request, response) => {
+    const turma = request.query.nomeTurma
+    console.log(turma)
+    AulasModel.find({ turma }, (error, turmas) => {
+        if (error) {
+            return response.status(500).send(error)
+        } else {
+            return response.status(200).send(turmas)
+        }
+    })
 
+}
 
+const remove = (request, response) => {
+    const id = request.params.id
+
+    AulasModel.findOneAndDelete(id, (error) => {
+        if (error) {
+            return response.status(500).send(error)
+        } else {
+            return response.status(200).send("Apagou")
+
+        }
+
+    })
+}
 
 const update = (request, response) => {
     const id = request.params.id
@@ -64,25 +75,13 @@ const update = (request, response) => {
 }
 
 
-const remove = (request, response) => {
-    const id = request.params.id
 
-    AulasModel.findOneAndDelete(id, (error) => {
-        if (error) {
-            return response.status(500).send(error)
-        } else {
-            return response.status(200).send("Apagou")
-
-        }
-
-    })
-
-};
 
 module.exports = {
     addAula,
     classAll,
-    update,
+    findByTurmaName,
     remove,
-    findByTurmaName
+    update
+
 }
