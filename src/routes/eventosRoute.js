@@ -73,7 +73,7 @@ router.patch('/:id', autenticarAdmin, controller1.update)
 router.delete('/:id', autenticarAdmin, controller1.deleteEvent)
 router.post('/:eventoId/alunos', autenticarAdmin, controller1.addAluno)
 router.delete('/:eventoId/:alunoId', autenticarAdmin, controller1.deleteAluno)
-router.get('/:turma?/eventos', autenticar, controller.findByTurmaName)
+router.get('/:turma?/eventos', autenticar, controller1.findByTurmaName)
 
 
 module.exports = router
