@@ -35,20 +35,20 @@ const adminAll = (request, response) => {
 }
 
 
-const addStudent = (request, response) => {
-  const senhaCriptografada = bcrypt.hashSync(request.body.senha)
-  request.body.senha = senhaCriptografada
-  request.body.grupo = 'comum'
-  const novoStudent = new AdminModel(request.body)
+// const addStudent = (request, response) => {
+//   const senhaCriptografada = bcrypt.hashSync(request.body.senha)
+//   request.body.senha = senhaCriptografada
+//   request.body.grupo = 'comum'
+//   const novoStudent = new AdminModel(request.body)
 
-  novoStudent.save((error) => {
-    if (error) {
-      return response.status(500).send(error)
-    }
+//   novoStudent.save((error) => {
+//     if (error) {
+//       return response.status(500).send(error)
+//     }
 
-    return response.status(201).send(novoStudent)
-  })
-}
+//     return response.status(201).send(novoStudent)
+//   })
+// }
 
 const login = async (request, response) => {
   const adminEncontrado = await AdminModel.findOne({ email: request.body.email })
@@ -115,7 +115,7 @@ const update = (request, response) => {
 module.exports = {
   addAdmin,
   adminAll,
-  addStudent,
+  // addStudent,
   login,
   remove,
   update

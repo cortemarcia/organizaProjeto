@@ -21,7 +21,7 @@ const EventosSchema = new Schema({
 
 const AulaSchema = new Schema({
     _id: { type: mongoose.Schema.Types.ObjectId, auto: true, required: true },
-    turma:{type: String, required: true},
+    nomeTurma:{type: String, required: true},
     semana: { type: String, required: true },
     materia: { type: String, required: true },  
     data: { type: String, required: true },
