@@ -53,6 +53,7 @@ const deleteAluno = async (request, response) => {
 
 }
 
+
 const deleteEvent = (request, response) => {
     const id = request.params.id
 
